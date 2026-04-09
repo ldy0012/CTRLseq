@@ -1,0 +1,18 @@
+Package: CUCseq2
+Title: Confounder-Unsupervised Correction for RNA-seq
+Version: 0.1.0
+Description: A VAE-based method to estimate latent confounders and improve differential expression analysis in RNA-seq data.
+Authors@R: person("YourName", "Kim", email = "your@email.com", role = c("aut", "cre"))
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Imports:
+    stats,
+    magrittr,
+    edgeR,
+    keras3,
+    tensorflow,
+    MASS,
+    purrr
