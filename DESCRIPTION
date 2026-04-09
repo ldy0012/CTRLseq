@@ -16,3 +16,5 @@ Imports:
     tensorflow,
     MASS,
     purrr
+URL: https://github.com/ldy0012/CUCseq2
+BugReports: https://github.com/ldy0012/CUCseq2/issues
