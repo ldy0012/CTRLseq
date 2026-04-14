@@ -8,18 +8,7 @@
 #'
 #' @return DEG result table
 #' @export
-
-# %as% operator
-`%as%` <- tensorflow::`%as%`
-
 run_CTRLseq <- function(counts, group, n_factor = 2, beta = 0.1, seed = 123){
-
-  # tensorflow dependency
-  if (!requireNamespace("tensorflow", quietly = TRUE)) {
-    stop("The 'tensorflow' package is required.")
-  }
-
-  tensorflow::tf
 
   obj <- CTRLseq(
     counts = counts,

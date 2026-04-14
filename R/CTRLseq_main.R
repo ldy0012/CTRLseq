@@ -20,16 +20,6 @@ CTRLseq <- function(counts, group, n.factor = 2, beta = 0.1, seed = 123){
 
   E <- residuals(fit, type = "deviance")
 
-  if (is.null(E)) {
-    E <- devianceResiduals(fit)
-  }
-
-  E <- as.matrix(E)
-
-  if (is.null(dim(E))) {
-    stop("Residual matrix E is not valid. Check input data.")
-  }
-
   F <- estimate_latent_factors(E, n.factor, beta = beta, seed = seed)
   F <- scale(F)
 
