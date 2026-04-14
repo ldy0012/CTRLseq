@@ -1,10 +1,10 @@
-#' Extract DEGs from CUCseq2 result
+#' Extract DEGs from CTRLseq result
 #'
-#' @param obj output from CUCseq2
+#' @param obj output from CTRLseq
 #'
 #' @return DEG result table
 #' @export
-DEGs_CUC <- function(obj){
+DEGs_CTRL <- function(obj){
 
   lrt <- edgeR::glmLRT(obj$fit, coef = 2)
   tab <- edgeR::topTags(lrt, n = nrow(obj$fit$counts))$table

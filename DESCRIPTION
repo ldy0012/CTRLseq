@@ -1,4 +1,4 @@
-Package: CUCseq2
+Package: CTRLseq
 Title: Confounder-Unsupervised Correction for RNA-seq
 Version: 0.1.0
 Description: A VAE-based method to estimate latent confounders and improve differential expression analysis in RNA-seq data.

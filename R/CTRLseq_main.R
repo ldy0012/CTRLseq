@@ -1,4 +1,4 @@
-#' CUCseq2 main model
+#' CTRLseq main model
 #'
 #' @param counts gene x sample count matrix
 #' @param group factor (control/case)
@@ -8,7 +8,7 @@
 #'
 #' @return list containing fitted model, latent factors, and DGE object
 #' @export
-CUCseq2 <- function(counts, group, n.factor = 2, beta = 0.1, seed = 123){
+CTRLseq <- function(counts, group, n.factor = 2, beta = 0.1, seed = 123){
 
   design <- model.matrix(~group)
 

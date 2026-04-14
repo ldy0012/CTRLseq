@@ -1,4 +1,4 @@
-#' Run full CUCseq2 pipeline
+#' Run full CTRLseq pipeline
 #'
 #' @param counts gene x sample count matrix
 #' @param group factor (control/case)
@@ -8,9 +8,9 @@
 #'
 #' @return DEG result table
 #' @export
-run_CUCseq2 <- function(counts, group, n_factor = 2, beta = 0.1, seed = 123){
+run_CTRLseq <- function(counts, group, n_factor = 2, beta = 0.1, seed = 123){
 
-  obj <- CUCseq2(
+  obj <- CTRLseq(
     counts = counts,
     group = group,
     n.factor = n_factor,
@@ -18,7 +18,7 @@ run_CUCseq2 <- function(counts, group, n_factor = 2, beta = 0.1, seed = 123){
     seed = seed
   )
 
-  res <- DEGs_CUC(obj)
+  res <- DEGs_CTRL(obj)
 
   return(res)
 }
