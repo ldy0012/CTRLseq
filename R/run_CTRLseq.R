@@ -9,6 +9,9 @@
 #' @return DEG result table
 #' @export
 
+# %as% operator
+`%as%` <- tensorflow::`%as%`
+
 run_CTRLseq <- function(counts, group, n_factor = 2, beta = 0.1, seed = 123){
 
   # tensorflow dependency
@@ -17,9 +20,6 @@ run_CTRLseq <- function(counts, group, n_factor = 2, beta = 0.1, seed = 123){
   }
 
   tensorflow::tf
-  # %as% operator
-  `%as%` <- tensorflow::`%as%`
-
 
   obj <- CTRLseq(
     counts = counts,
