@@ -20,6 +20,10 @@ CTRLseq <- function(counts, group, n.factor = 2, beta = 0.1, seed = 123){
 
   E <- residuals(fit, type = "deviance")
 
+  if (is.null(E)) {
+    E <- devianceResiduals(fit)
+  }
+
   E <- as.matrix(E)
 
   if (is.null(dim(E))) {
