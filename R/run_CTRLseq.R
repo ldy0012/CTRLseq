@@ -8,7 +8,14 @@
 #'
 #' @return DEG result table
 #' @export
+
+`%as%` <- tensorflow::`%as%`
+
 run_CTRLseq <- function(counts, group, n_factor = 2, beta = 0.1, seed = 123){
+
+  if (!requireNamespace("tensorflow", quietly = TRUE)) {
+    stop("tensorflow required")
+  }
 
   obj <- CTRLseq(
     counts = counts,
