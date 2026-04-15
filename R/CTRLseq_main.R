@@ -13,7 +13,7 @@ CTRLseq <- function(counts, group, n.factor = 2, beta = 0.1, seed = 123){
 
   dge <- edgeR::DGEList(counts = counts, group = group)
 
-  design <- model.matrix(~dge$samples$group)
+  design <- model.matrix(~group)
 
   dge <- edgeR::calcNormFactors(dge)
   dge <- edgeR::estimateDisp(dge, design)
