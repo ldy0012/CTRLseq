@@ -37,7 +37,7 @@ CTRLseq <- function(counts, group, n.factor = 2, beta = 0.1, seed = 123){
 
   design2 <- cbind(design, F)
 
-  dge2 <- edgeR::DGEList(counts = counts)
+  dge2 <- edgeR::DGEList(counts = counts, group = group)
   dge2 <- edgeR::calcNormFactors(dge2)
   dge2 <- edgeR::estimateDisp(dge2, design2)
 
