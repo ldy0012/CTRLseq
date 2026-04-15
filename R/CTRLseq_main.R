@@ -23,7 +23,7 @@ CTRLseq <- function(counts, group, n.factor = 2, beta = 0.1, seed = 123){
   E <- residuals(fit, type = "deviance")
 
   if (is.null(E)) {
-    E <- edgeR::residuals.DGEGLM(fit, type = "deviance")
+    E <- edgeR:::residuals.DGEGLM(fit, type = "deviance")
   }
 
   if (is.null(E)) {
@@ -32,18 +32,6 @@ CTRLseq <- function(counts, group, n.factor = 2, beta = 0.1, seed = 123){
 
   if (is.null(dim(E))) {
     E <- matrix(E, nrow = nrow(counts))
-  }
-
-  if (is.null(E)) {
-    stop("Residuals are NULL. Model fitting failed.")
-  }
-
-  if (is.null(dim(E))) {
-    E <- matrix(E, nrow = nrow(counts))
-  }
-
-  if (!is.matrix(E)) {
-    stop("Residual matrix E is not valid.")
   }
 
   F <- estimate_latent_factors(E, n.factor, beta = beta, seed = seed)
