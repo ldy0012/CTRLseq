@@ -9,10 +9,12 @@
 #' @return list containing fitted model, latent factors, and DGE object
 #' @export
 CTRLseq <- function(counts, group, n.factor = 2, beta = 0.1, seed = 123){
+  group <- factor(group)
+
+  dge <- edgeR::DGEList(counts = counts, group = group)
 
   design <- model.matrix(~dge$samples$group)
 
-  dge <- edgeR::DGEList(counts = counts, group = group)
   dge <- edgeR::calcNormFactors(dge)
   dge <- edgeR::estimateDisp(dge, design)
 
