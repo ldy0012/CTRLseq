@@ -23,15 +23,7 @@ CTRLseq <- function(counts, group, n.factor = 2, beta = 0.1, seed = 123){
   E <- residuals(fit, type = "deviance")
 
   if (is.null(E)) {
-    E <- edgeR:::residuals.DGEGLM(fit, type = "deviance")
-  }
-
-  if (is.null(E)) {
-    stop("Residual calculation failed completely.")
-  }
-
-  if (is.null(dim(E))) {
-    E <- matrix(E, nrow = nrow(counts))
+    E <- devianceResiduals(fit)
   }
 
   F <- estimate_latent_factors(E, n.factor, beta = beta, seed = seed)
